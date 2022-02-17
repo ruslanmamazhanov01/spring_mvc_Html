@@ -9,6 +9,6 @@ public interface UserDao {
 
     void addUser(User user);
     List<User> getAllUsers();
-    void updateUser(int id);
+    User updateUser(int id);
     void removeUser(int id);
 }

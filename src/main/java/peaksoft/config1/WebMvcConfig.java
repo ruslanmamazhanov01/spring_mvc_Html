@@ -17,4 +17,6 @@ public class WebMvcConfig extends AbstractAnnotationConfigDispatcherServletIniti
     protected String[] getServletMappings() {
         return new String[]{"/"};
     }
+
+   
 }

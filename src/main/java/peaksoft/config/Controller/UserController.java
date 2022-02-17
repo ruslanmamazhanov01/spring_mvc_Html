@@ -20,12 +20,12 @@ public class UserController {
     }
 
     @GetMapping("add-user")
-    public String getUser() {
+    public String addUser() {
         return "add-user";
     }
 
     @PostMapping("save-user")
-    public String addUser(User user, Model model) {
+    public String saveUser(User user, Model model) {
 
         service.addUser(user);
         System.out.println(user.getAge());
@@ -41,9 +41,8 @@ public class UserController {
 
     }
     @GetMapping("/edit")
-    public String edit(@RequestParam int id){
-    
-
-        return "";
+    public String edit(@RequestParam int id,Model model){
+        model.addAttribute("users",id);
+        return "edit";
     }
 }

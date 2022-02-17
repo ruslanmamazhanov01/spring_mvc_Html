@@ -32,10 +32,9 @@ public class UserDaompl implements UserDao {
     }
 
     @Override
-    public void updateUser(int id) {
-         sessionFactory.getCurrentSession().createQuery("  from user    s where  id = ?").
-                 setParameter(1,id).executeUpdate();
-    }
+    public User updateUser(int id) {
+        return sessionFactory.getCurrentSession().get(User.class,id);
+         }
 
     @Override
     public void removeUser(int id) {
